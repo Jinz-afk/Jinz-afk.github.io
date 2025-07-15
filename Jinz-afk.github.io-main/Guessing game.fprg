@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Guessing game"/>
+        <attribute name="authors" value="jerry"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-07-07 10:09:22 PM"/>
+        <attribute name="created" value="amVycnk7REVTS1RPUC1MQ0QxVFBGOzIwMjUtMDctMDc7MDk6Mjg6MzEgUE07MjkyMw=="/>
+        <attribute name="edited" value="amVycnk7REVTS1RPUC1MQ0QxVFBGOzIwMjUtMDctMDc7MTA6MDk6MjIgUE07NzszMDI4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Name: JinRui&#13;&#10;CTI 110 Section Number: 0005&#13;&#10;Test Case 1: User enters -999 to quit&#13;&#10;Test Case 2: User guesses the correct number"/>
+            <declare name="CorrectNum" type="Integer" array="False" size=""/>
+            <declare name="guess" type="Integer" array="False" size=""/>
+            <assign variable="CorrectNum" expression="Random(10)+1"/>
+            <output expression="&quot;Guess a number between 1 and 10, or enter -999 to quit:&quot;" newline="True"/>
+            <input variable="guess"/>
+            <if expression="guess = CorrectNum">
+                <then>
+                    <output expression="&quot;Congratulations! You guessed the correct number!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <while expression="guess = -999">
+                        <output expression="&quot;You have quit the game.&quot;" newline="True"/>
+                    </while>
+                    <output expression="&quot;Invalid input! Try again!&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

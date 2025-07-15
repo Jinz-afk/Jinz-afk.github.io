@@ -1,0 +1,27 @@
+# Random Guessing Game Flowchart
+
+This flowchart represents a number guessing game where:
+- The computer randomly selects a number within a specified range.
+- The user is prompted to guess the number.
+- The program provides feedback:
+  - "Too High" if the guess is greater than the number.
+  - "Too Low" if the guess is less than the number.
+  - "Correct" if the guess matches.
+- Input validation ensures that the user enters a valid numeric input.
+- The loop continues until the correct guess is made.
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Generate Random Number]
+    B --> C[Prompt User for Guess]
+    C --> D{Is input a number?}
+    D -- No --> E[Display "Invalid Input"]
+    E --> C
+    D -- Yes --> F{Is guess = number?}
+    F -- Yes --> G[Display "Correct!"]
+    G --> H[End]
+    F -- No --> I{Is guess > number?}
+    I -- Yes --> J[Display "Too High"]
+    I -- No --> K[Display "Too Low"]
+    J --> C
+    K --> C
